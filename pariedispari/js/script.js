@@ -6,8 +6,18 @@
 // Dichiariamo chi ha vinto.
 
 //dichiarazione variabili
-let userEvenOrOdd = prompt('inserisci o pari o dispari').toLowerCase();
-const userNumberInput = parseInt(prompt('Inserisci un numero'));
+let userNumberInput;
+let userEvenOrOdd;
+//controllo che l'utente inserisca pari o dispari
+do{
+    userEvenOrOdd = prompt('inserisci o pari o dispari').toLowerCase();
+}while( !(userEvenOrOdd === 'pari' || userEvenOrOdd === 'dispari') );
+
+//controllo che il numero sia compreso tra 0 e 5
+do{
+    userNumberInput = parseInt(prompt('Inserisci un numero'));
+}while(userNumberInput <= 0 || userNumberInput >= 6);
+
 const pcNumber = randomGenerator(1,5);
 
 //stampo i dati raccolti
@@ -31,8 +41,8 @@ function evenOrOdd(num1, num2){
     let sum = num1 + num2;
     console.log("somma", sum)
     if(sum % 2 === 0){
-        return 'pari'
+        return 'pari';
     } else {
-        return 'dispari'
+        return 'dispari';
     }
 }
